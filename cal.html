@@ -1,0 +1,91 @@
+<html>
+<head>
+    <style>
+        .gridcontainer
+        {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            background-color: rgb(85, 10, 62);
+            width: 30%;
+            height : 260px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .griditem
+        {
+            background-color:rgb(238, 80, 154);
+            margin: 2px;
+            padding: 2px;
+
+        }
+        .griditemdisplay
+        {
+            background-color:rgb(134, 243, 112);
+            margin: 5px;
+            padding: 5px;
+            grid-column: 1/5;
+            display: block;
+            
+
+        }
+        .inputdisplay
+        {
+            width: 99%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            height:50px;
+            color: rgb(12, 100, 4);
+        }
+        button
+        {
+            width: 100%;
+            height: 100%;
+            background-color:rgb(225, 239, 119);
+            color: rgb(2, 16, 28);
+            padding: 2px;
+        }
+    </style>
+    <script>
+        function textdisplay(a)
+        {
+            if(a=='c')
+            {
+                document.getElementById("display").value =""
+            }
+            else if(a=='=')
+            {
+                var result = eval(document.getElementById("display").value)
+                document.getElementById("display").value = result
+            }
+            else
+            {
+            document.getElementById("display").value= document.getElementById("display").value + a
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="gridcontainer"> 
+    <div class="griditemdisplay"><input type="text" name="display" id="display" class="inputdisplay"></div>
+    <div class="griditem"><button type="submit" id="1" onclick="textdisplay(1)">1</button></div>
+    <div class="griditem"><button type="submit" id="2" onclick="textdisplay(2)">2</button></div>
+    <div class="griditem"><button type="submit" id="3" onclick="textdisplay(3)">3</button></div>
+    <div class="griditem"><button type="submit" id="4" onclick="textdisplay(4)">4</button></div>
+    <div class="griditem"><button type="submit" id="5" onclick="textdisplay(5)">5</button></div>
+    <div class="griditem"><button type="submit" id="6" onclick="textdisplay(6)">6</button></div>
+    <div class="griditem"><button type="submit" id="7" onclick="textdisplay(7)">7</button></div>
+    <div class="griditem"><button type="submit" id="8" onclick="textdisplay(8)">8</button></div>
+    <div class="griditem"><button type="submit" id="9" onclick="textdisplay(9)">9</button></div>
+    <div class="griditem"><button type="submit" id="0" onclick="textdisplay(0)">0</button></div>
+    <div class="griditem"><button type="submit" id="+" onclick="textdisplay('+')">+</button></div>
+    <div class="griditem"><button type="submit" id="-" onclick="textdisplay('-')">-</button></div>
+    <div class="griditem"><button type="submit" id="*" onclick="textdisplay('*')">*</button></div>
+    <div class="griditem"><button type="submit" id="/" onclick="textdisplay('/')">/</button></div>
+    <div class="griditem"><button type="submit" id="=" onclick="textdisplay('=')">=</button></div>
+    <div class="griditem"><button type="submit" id="c" onclick="textdisplay('c')">c</button></div>
+
+
+</div>
+</body>
+</html>
